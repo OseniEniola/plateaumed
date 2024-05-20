@@ -58,7 +58,7 @@ const LoginForm = () => {
               error:(err) => {toast.error(err)}
             }).then((res)=>{
           localStorage.setItem("authUser",btoa(JSON.stringify(res)))
-          navigate("/app/dashboard");
+          navigate("/app/students-list");
           window.location.reload()
         }).catch(err => {console.log(err)})
       }else {

@@ -105,7 +105,7 @@ const CreateTeacherForm=(props)=> {
             }
         ).then(() => {
             localStorage.setItem("authUser",btoa(JSON.stringify(body)))
-            navigate("/app/dashboard");
+            navigate("/app/students-list");
             window.location.reload()
         });
     };
