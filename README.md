@@ -71,6 +71,12 @@ Accessible only by admin role. This module allows users to:
 1. Open your browser and navigate to `http://localhost:3000`.
 2. Use the provided mocked credentials to log in or create a new account using the registration link.
 
+## Routes
+- /login
+- /signup-user
+- /app/teachers-list
+- /app/students-list
+
 ## Mocked User Credentials
 
 ### Admin
