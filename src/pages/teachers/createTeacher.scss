@@ -1,0 +1,12 @@
+@import '../../assets/styles/form.scss';
+#create-user{
+    width: 100%;
+    form{
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    .input_area{
+            width: 46%;
+        }
+    }
+}

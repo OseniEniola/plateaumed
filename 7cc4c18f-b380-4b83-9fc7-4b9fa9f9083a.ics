@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Calendly//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+DTSTAMP:20240520T032941Z
+UID:calendly-988481161
+DTSTART:20240521T213000Z
+DTEND:20240521T220000Z
+CLASS:PRIVATE
+DESCRIPTION:Event Name: UVX Coding Challenge\nEvent Description: Please dis
+ regard the 30-minute duration of this event. You will have 2 hours to comp
+ lete the challenge.\nDate & Time: 02:30pm - 03:00pm (Pacific Time - US & C
+ anada) on Tuesday\, May 21\, 2024\nLocation: An email will be sent at the 
+ selected time with the challenge\n\nNeed to make changes to this event?\nC
+ ancel: https://calendly.com/cancellations/7cc4c18f-b380-4b83-9fc7-4b9fa9f9
+ 083a\nReschedule: https://calendly.com/reschedulings/7cc4c18f-b380-4b83-9f
+ c7-4b9fa9f9083a\n
+LOCATION:An email will be sent at the selected time with the challenge
+SUMMARY:UVX Coding Challenge with Saimir Sulaj
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

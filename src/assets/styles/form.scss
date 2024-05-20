@@ -1,6 +1,6 @@
 .logo {
   position: absolute;
-  width: 5%;
+  width: 12%;
   left: 5%;
   top: 5%;
 }
@@ -111,8 +111,17 @@
     font-weight: 400;
     font-size: 0.5rem;
   }
+
 }
 
+.create_group .form_wrap{
+  position: relative;
+  .show-password {
+    position: absolute;
+    right: 5%;
+    top: 48%;
+  }
+}
 .create_group .form_wrap .input_area label {
   font-family: "Poppins";
   font-size: 0.88rem;
@@ -136,11 +145,7 @@
   border: 1px solid #5f6060;
   border-radius: 6px;
   position: relative;
-  .show-password {
-    position: absolute;
-    right: 5%;
-    top: 40%;
-  }
+
 }
 .create_group .form_wrap .input_area .input_wrap.password {
   padding: 0;
@@ -196,6 +201,6 @@
   margin-bottom: 3%;
   border: none;
   color: #fff;
-  width: 100%;
+  width: 95%;
   margin-top: 5%;
 }

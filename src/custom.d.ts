@@ -4,3 +4,20 @@ declare module '*.svg' {
     const src: string;
     export default src;
   }
+
+declare module '*.png' {
+    const value: any;
+    export = value;
+}
+
+declare module '*.webp' {
+    const value: any;
+    export = value;
+}
+
+declare module "*.js" {
+    const value: any;
+    export = value;
+}
+
+

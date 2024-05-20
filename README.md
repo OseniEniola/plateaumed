@@ -1,71 +1,104 @@
-# Getting Started with Create React App
+```markdown
+# React App: User Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+- [Overview](#overview)
+- [Features](#features)
+- [Modules](#modules)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Mocked User Credentials](#mocked-user-credentials)
+- [Persistence](#persistence)
+- [Contributing](#contributing)
+- [License](#license)
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+This React application is designed to manage students and teachers. The app is divided into two main modules: Student Management and Teacher Management. The Student Management module is accessible to both teachers and admins, while the Teacher Management module is accessible only to admins. The application uses localStorage to persist user data and includes mocked user credentials for testing purposes.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Login functionality:** Only teachers and admins can log in.
+- **User Registration:** Both students and teachers can create accounts via the registration link on the login page.
+- **Student Management:** Accessible to both teachers and admins for managing student data.
+- **Teacher Management:** Accessible only to admins for managing teacher data.
+- **Data Persistence:** User data is stored in localStorage to ensure persistence across sessions.
 
-### `npm test`
+## Modules
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Student Management
 
-### `npm run build`
+Accessible by both teacher and admin roles. This module allows users to:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- View student details
+- Add new students
+- Edit existing student information
+- Delete students
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Teacher Management
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Accessible only by admin role. This module allows users to:
 
-### `npm run eject`
+- View teacher details
+- Add new teachers
+- Edit existing teacher information
+- Delete teachers
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/yourusername/your-repo-name.git
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Navigate to the project directory:
+   ```sh
+   cd your-repo-name
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. Install dependencies:
+   ```sh
+   npm install
+   ```
 
-## Learn More
+4. Start the development server:
+   ```sh
+   npm start
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Usage
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Open your browser and navigate to `http://localhost:3000`.
+2. Use the provided mocked credentials to log in or create a new account using the registration link.
 
-### Code Splitting
+## Mocked User Credentials
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Admin
+- **Username:** admin3@example.com
+- **Password:** password
 
-### Analyzing the Bundle Size
+### Teacher
+- **Username:** teacher2@example.com
+- **Password:** password
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Student
+- **Username:** student1@example.com
+- **Password:** password
 
-### Making a Progressive Web App
+## Persistence
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The application uses `localStorage` to persist user data. This ensures that any data added or modified by users will remain available even after refreshing the browser or restarting the application.
 
-### Advanced Configuration
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Contributions are welcome! Please fork the repository and create a pull request with your changes. For major changes, please open an issue to discuss what you would like to change.
 
-### Deployment
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# plateaumed
+Enjoy managing your students and teachers with this React application! If you encounter any issues or have any suggestions, feel free to open an issue on the GitHub repository.
+```

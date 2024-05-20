@@ -198,7 +198,7 @@ input::-webkit-inner-spin-button {
     right: 3%;
     background: #ffffff;
     border: 1px solid #b6b2ca;
-    box-shadow: 0px 1px 6px rgb(195 203 217 / 20%);
+    box-shadow: #C3CBD933;
     border-radius: 24px;
     padding: 5px 14px;
     width: 20%;
@@ -249,7 +249,7 @@ input::-webkit-inner-spin-button {
 }
 .nav.nav-tabs {
   width: 100%;
-  border-bottom: 1px solid $nav-bottom-border;
+  border-bottom: 1px solid var(--nav-bottom-border);
   padding: 2%;
   padding-right: 0%;
   padding-left: 0;
@@ -278,8 +278,8 @@ input::-webkit-inner-spin-button {
       border: none;
       width: max-content;
       &.active {
-        color: $active-nav;
-        border-bottom: 1px solid $active-nav;
+        color: var(--active-nav);
+        border-bottom: 1px solid var(--active-nav);
       }
     }
   }
@@ -312,7 +312,7 @@ input::-webkit-inner-spin-button {
         color: #747474;
         text-transform: uppercase;
         @media (min-width: 320px) and (max-width: 820px) {
-          font-size: 0.56;
+          font-size: 0.56rem;
           }
       }
       .count {
@@ -322,7 +322,7 @@ input::-webkit-inner-spin-button {
         font-size: 1.2rem;
         color: #000;
         @media (min-width: 320px) and (max-width: 820px) {
-        font-size: 0.85;
+        font-size: 0.85rem;
         }
       }
     }
@@ -381,7 +381,7 @@ input::-webkit-inner-spin-button {
     width: 2px;
     height: 10px;
     position: absolute;
-    background-color: $white;
+    background-color: var(--white);
     border-radius: 4px;
     left: 44%;
     top: 4px;
@@ -415,7 +415,7 @@ input[type="checkbox"]:checked::before {
   line-height: 0.71rem;
   text-align: center;
   background-color: green;
-  border: $primary;
+  border: var(--primary);
   color: white;
   font-size: 7px;
   border-radius: 2px;

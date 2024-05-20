@@ -1,4 +1,3 @@
-// FormContext.js
 import React, { createContext, useContext, useState, useCallback } from 'react';
 
 const FormContext = createContext();
@@ -11,7 +10,7 @@ export const FormProvider = ({ children }) => {
     const setFieldError = useCallback((fieldName, errorType, params = {}) => {
         setErrors((prevErrors) => ({
             ...prevErrors,
-            [fieldName]: { type: errorType, params },
+            [fieldName]: {fieldName, type: errorType, params },
         }));
     }, []);
 

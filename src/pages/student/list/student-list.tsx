@@ -1,16 +1,15 @@
 import React from "react";
 import MainLayout from "../../../../src/components/shared/layout/main-layout";
-import "./teacher-list.scss";
+import "./student-list.scss";
 import { CaretDownFill, CaretUpFill, Search, InfoCircle, XCircle } from "react-bootstrap-icons";
 import WhiteDropDown from "../../../assets/images/dropdown-button.svg";
 import PaginationComponent from "../../../components/shared/pagination/pagination";
 import { Circles } from "react-loader-spinner";
-//import { getSubjectsAPI} from "../../data/helpers/services";
 import moment from "moment-mini";
 import debounce from "lodash/debounce.js";
 import { Spinner } from "react-bootstrap";
 import {UserDto} from "../../../common/dto/User";
-import {getAllTeacher} from "../../../helpers/services/api";
+import {getAllStudent} from "../../../helpers/services/api";
 
 
 const ArrowUp = {
@@ -44,7 +43,7 @@ export interface State {
     isShowMobileSearch:boolean
 }
 
-class TeacherList extends React.Component<any, State> {
+class StudentList extends React.Component<any, State> {
     constructor(props: any) {
         super(props);
 
@@ -70,7 +69,7 @@ class TeacherList extends React.Component<any, State> {
     }
     getTeachers = () => {
         this.setState({ isLoading: true });
-        getAllTeacher.then((res:any) => {
+        getAllStudent.then((res:any) => {
             console.log(res);
             this.setState({ tableData: res, dataPerPage:res.length, totalPageData: res.length, isLoading: false });
         });
@@ -124,7 +123,7 @@ render() {
             )}
             <div className="page-wrap">
                 <div className="table-title">
-                    <div className="header">Teachers List</div>
+                    <div className="header">Students List</div>
                     <Search className="mobileSearchIcon" onClick={()=>this.setState({isShowMobileSearch:true})}></Search>
                 </div>
                 <div className={`action-btn-wrap ${this.state.isShowMobileSearch ? 'showMobile' : ''} `}>
@@ -166,14 +165,6 @@ render() {
                                 )}{" "}
                             </th>
                             <th>
-                                Title
-                                {this.state.dataField === "title" ? (
-                                    <CaretUpFill style={ArrowUp} onClick={() => this.sortTableData("title", "asc")} />
-                                ) : (
-                                    <CaretDownFill style={ArrowDown} onClick={() => this.sortTableData("title", "desc")} />
-                                )}{" "}
-                            </th>
-                            <th>
                                 First Name
                                 {this.state.dataField === "firstname" ? (
                                     <CaretUpFill style={ArrowUp} onClick={() => this.sortTableData("firstname", "asc")} />
@@ -198,19 +189,11 @@ render() {
                                 )}{" "}
                             </th>
                             <th>
-                                Teacher Number
-                                {this.state.dataField === "teacher_no" ? (
-                                    <CaretUpFill style={ArrowUp} onClick={() => this.sortTableData("teacher_no", "asc")} />
+                                Student Number
+                                {this.state.dataField === "student_no" ? (
+                                    <CaretUpFill style={ArrowUp} onClick={() => this.sortTableData("student_no", "asc")} />
                                 ) : (
-                                    <CaretDownFill style={ArrowDown} onClick={() => this.sortTableData("teacher_no", "desc")} />
-                                )}{" "}
-                            </th>
-                            <th>
-                                Salary
-                                {this.state.dataField === "salary" ? (
-                                    <CaretUpFill style={ArrowUp} onClick={() => this.sortTableData("salary", "asc")} />
-                                ) : (
-                                    <CaretDownFill style={ArrowDown} onClick={() => this.sortTableData("salary", "desc")} />
+                                    <CaretDownFill style={ArrowDown} onClick={() => this.sortTableData("student_no", "desc")} />
                                 )}{" "}
                             </th>
                         </tr>
@@ -223,12 +206,10 @@ render() {
 
                                         <td>{value.id}</td>
                                         <td>{value.profile.national_no}</td>
-                                        <td>{value.profile.title}</td>
                                         <td>{value.profile.firstname}</td>
                                         <td>{value.profile.lastname}</td>
                                         <td>{moment(value.profile.dob).format("MMM Do, YYYY")}</td>
-                                        <td>{value.profile.teacher_no}</td>
-                                        <td>{value.profile.salary}</td>
+                                        <td>{value.profile.student_no}</td>
                                     </tr>
                                 );
                             })}
@@ -298,4 +279,4 @@ render() {
 }
 }
 
-export default TeacherList;
+export default StudentList;

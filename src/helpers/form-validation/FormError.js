@@ -21,17 +21,19 @@ const errorMessages = {
     shouldBeEqual: 'Confirm password must match password',
     confirmPassword: 'Passwords must match *',
     alphaDash: 'Enter a valid name *',
+    ageLessThan:'##FIELD## age is less than ##VALUE##',
+    ageMoreThan:'##FIELD## age is more than ##VALUE##',
+
     customMessage: (params) => params.value,
 };
 
-const FormError = React.memo(({ fieldName, label }) => {
+const FormError = React.memo(({ validationType, fieldName, label }) => {
     const { errors } = useForm();
-
     if (!errors[fieldName]) {
         return null;
     }
 
-    const getErrorMessage = (errorType, params) => {
+    const getErrorMessage = (fieldName, errorType, params) => {
         let messageTemplate = errorMessages[errorType];
         if (typeof messageTemplate === 'function') {
             return messageTemplate(params);
@@ -43,9 +45,8 @@ const FormError = React.memo(({ fieldName, label }) => {
 
     return (
         <div style={{ fontSize: '0.7rem' }} className="help-block errors text-danger animated shake">
-            {getErrorMessage(errors[fieldName].type, errors[fieldName].params)}
+            {getErrorMessage(errors[fieldName].fieldName, errors[fieldName].type, errors[fieldName].params)}
         </div>
     );
 });
-
 export default FormError;

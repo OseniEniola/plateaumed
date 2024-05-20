@@ -1,5 +1,5 @@
-export const RolesEnum = {
-    ADMIN:'admin',
-    STUDENT:'student',
-    TEACHER:'teacher',
+export const Roles = {
+    ADMIN:'ADMIN',
+    STUDENT:'STUDENT',
+    TEACHER:'TEACHER',
 }

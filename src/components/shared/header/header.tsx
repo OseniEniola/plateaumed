@@ -5,15 +5,11 @@ import Notification from "../../../assets/images/notification-bing.svg";
 import { ChevronDown } from "react-bootstrap-icons";
 import Profile from "../../../assets/images/security-user.svg";
 import Logout from "../../../assets/images/logout-profile.svg";
-import { getLoggedInUser, getNotificationsAPI } from "../../../data/helpers/services";
 import { Link, Navigate } from "react-router-dom";
-import { NotificationModel } from "../../../pages/settings/notification/model/notification";
+import {getLoggedInUser} from "../../../helpers/services/loginservice";
 
-export interface State {
-   notifications: NotificationModel[];
-   navigate: boolean;
-}
-class Header extends React.Component<any, State> {
+
+class Header extends React.Component<any, any> {
    constructor(props: any) {
       super(props);
       this.state = {
@@ -26,18 +22,8 @@ class Header extends React.Component<any, State> {
       this.setState({ navigate: true });
    };
    componentDidMount(): void {
-      this.getNotifications();
    }
-   getNotifications = (query?: any) => {
-      getNotificationsAPI()
-         .then((res) => {
-            this.setState({ notifications: res.data?.data },()=>{
-                this.setState({notifications: this.state.notifications.filter(e=>e.isRead == false)},()=>{
-                })
-            });
-         })
-         .catch(() => {});
-   };
+
    render() {
       const navigate = this.state.navigate;
       // here is the important part
@@ -55,13 +41,11 @@ class Header extends React.Component<any, State> {
                <Dropdown.Toggle variant="success" id="dropdown-basic">
                   <div className="circle">
                      <span className="initials">
-                        {getLoggedInUser()?.admin.firstName.charAt(0)}
-                        {getLoggedInUser()?.admin.lastName.charAt(0)}
+                        {getLoggedInUser()?.profile.firstname?.charAt(0)} {getLoggedInUser()?.profile.lastname?.charAt(0)}
                      </span>
                   </div>{" "}
                   <span>
-                     {" "}
-                     {getLoggedInUser()?.admin.firstName} {getLoggedInUser()?.admin.lastName}
+                    {getLoggedInUser()?.profile.firstname} {getLoggedInUser()?.profile.lastname}
                   </span>{" "}
                   <ChevronDown />
                </Dropdown.Toggle>
