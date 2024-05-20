@@ -1,4 +1,3 @@
-```markdown
 # React App: User Management System
 
 ## Table of Contents
@@ -15,7 +14,7 @@
 
 ## Overview
 
-This React application is designed to manage students and teachers. The app is divided into two main modules: Student Management and Teacher Management. The Student Management module is accessible to both teachers and admins, while the Teacher Management module is accessible only to admins. The application uses localStorage to persist user data and includes mocked user credentials for testing purposes.
+This React application is designed to manage students and teachers. The app is divided into two main modules: Student Management and Teacher Management. The Student Management module is accessible to both teachers and admins, while the Teacher Management module is accessible only to admins. The application uses localStorage to persist user data, and includes mocked user credentials for testing purposes.
 
 ## Features
 
@@ -49,12 +48,12 @@ Accessible only by admin role. This module allows users to:
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/your-repo-name.git
+   git clone https://github.com/OseniEniola/plateaumed.git
    ```
 
 2. Navigate to the project directory:
    ```sh
-   cd your-repo-name
+   cd plateaumed
    ```
 
 3. Install dependencies:
@@ -82,10 +81,6 @@ Accessible only by admin role. This module allows users to:
 - **Username:** teacher2@example.com
 - **Password:** password
 
-### Student
-- **Username:** student1@example.com
-- **Password:** password
-
 ## Persistence
 
 The application uses `localStorage` to persist user data. This ensures that any data added or modified by users will remain available even after refreshing the browser or restarting the application.
@@ -101,4 +96,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ---
 
 Enjoy managing your students and teachers with this React application! If you encounter any issues or have any suggestions, feel free to open an issue on the GitHub repository.
-```
