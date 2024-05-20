@@ -1,0 +1,129 @@
+@import "../../assets/styles/variables.scss";
+
+.table-wrap {
+  // * {
+  //   text-transform: capitalize;
+  // }
+  table {
+    width: 100%;
+    border: 1px solid #eeeeee;
+    border-spacing: 0;
+    border-collapse: separate;
+    border-radius: 24px 24px 0px 0px;
+    padding: 0;
+    margin-top: 10px;
+    @media (min-width: 320px) and (max-width: 820px) {
+      display: none;
+      visibility: hidden;
+    }
+    th,
+    td {
+      padding: 10px 10px 5px 10px;
+      font-size: 0.7rem;
+      &:first-of-type {
+        padding-left: 22px;
+        padding-top: 20px;
+      }
+    }
+    th {
+      background: #f8f8f8;
+      font-family: "Montserrat";
+      font-style: normal;
+      font-weight: 600;
+    }
+    tbody {
+      td {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 400;
+      }
+    }
+  }
+
+  table tr:last-child td:last-child {
+    border-bottom-right-radius: 24px;
+  }
+
+  table tr:last-child td:first-child {
+    border-bottom-left-radius: 24px;
+  }
+
+  table tr:first-child th:first-child,
+  table tr:first-child td:first-child {
+    border-top-left-radius: 24px;
+  }
+
+  table tr:first-child th:last-child,
+  table tr:first-child td:last-child {
+    border-top-right-radius: 24px;
+  }
+  .no-data {
+    text-align: center;
+    td {
+      font-size: 1rem;
+    }
+  }
+}
+.mobile-section {
+  padding: 2%;
+  .content-wrap {
+    .card {
+      display: flex;
+      padding: 2% 3.5%;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+      margin-bottom: 0.8rem;
+      .row {
+        font-family: "Poppins";
+        &:first-of-type{
+          width: 80%;
+        }
+        .bold-text {
+          font-style: normal;
+          font-weight: 500;
+        }
+        .light-text {
+          font-style: normal;
+          font-weight: 400;
+          font-size: 0.7rem;
+          margin-top: 5px;
+        }
+        .green-text {
+          font-style: normal;
+          font-weight: 500;
+          font-size: 0.85rem;
+          color: $primary;
+        }
+        .black-text{
+          color: #000;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 0.85rem;
+        }
+        .normal-text {
+          font-style: normal;
+          font-weight: 400;
+          font-size: 0.65rem;
+        }
+      }
+    }
+
+      .cta-button {
+        background: #01c38e;
+        width: 100%;
+        border-radius: 8px;
+        color: #ffffff;
+        font-size: 0.7rem;
+        text-align: center;
+        font-family: "Poppins";
+        font-weight: 500;
+        margin-bottom: 10px;
+        padding: 1rem;
+        margin-top: 10px;
+    }
+    .more-dropdown .dropdown-menu{
+     // width: 100%;
+    }
+  }
+}
