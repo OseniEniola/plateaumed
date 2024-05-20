@@ -70,7 +70,6 @@ class TeacherList extends React.Component<any, State> {
     getTeachers = () => {
         this.setState({ isLoading: true });
         getAllTeacher.then((res:any) => {
-            console.log(res);
             this.setState({ tableData: res, dataPerPage:res.length, totalPageData: res.length, isLoading: false });
         });
     };

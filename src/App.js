@@ -32,12 +32,10 @@ const App =() => {
   ));
 
   const AuthProtectedRoutes = authProtectedRoutes.filter(e=>{
-      console.log(loggedUser)
 
       return e.roles?.includes(loggedUser?.role)}).map((route, idx) => {
     return (
         <>
-            {console.log('return route')}
             <Route
                 key={idx}
                 exact

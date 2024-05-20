@@ -1,7 +1,7 @@
 import Logo from "../../assets/images/plateaumed_logo.webp";
 import "./createStudent.scss";
 import {Link, useNavigate} from "react-router-dom";
-import React, {useCallback, useState} from "react";
+import React, {useCallback, useEffect, useState} from "react";
 import FormGroup from "../../helpers/form-validation/FormGroup.js"
 import {FormProvider,useForm} from "../../helpers/form-validation/FormContext";
 import {validateField} from "../../helpers/form-validation/FormUtility";
@@ -30,6 +30,17 @@ const CreateStudentForm=(props)=> {
     const [formValues, setFormValues] = useState(studentObject);
     const [formErrors, setFormErrors] = useState({});
     const navigate = useNavigate();
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    useEffect(() => {
+        if (isSubmitting && Object.keys(errors).length === 0) {
+            createUser()
+            console.log('Form submitted successfully', formValues);
+        }else {
+            console.log('Form has errors');
+        }
+    }, [errors, isSubmitting]);
+
 
     const handleInputChange = useCallback((e) => {
         const { name, value, required, dataset } = e.target;
@@ -55,12 +66,7 @@ const CreateStudentForm=(props)=> {
             );
         });
 
-        if (Object.keys(errors).length === 0) {
-            createUser()
-            console.log('Form submitted successfully', formValues);
-        } else {
-            console.log('Form has errors');
-        }
+       setIsSubmitting(true)
     };
 
 

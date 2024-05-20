@@ -37,7 +37,16 @@ const CreateTeacherForm=(props)=> {
     const [formValues, setFormValues] = useState(teacherObject);
     const [formErrors, setFormErrors] = useState({});
     const navigate = useNavigate();
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
+    useEffect(() => {
+        if (isSubmitting && Object.keys(errors).length === 0) {
+                createUser()
+                console.log('Form submitted successfully', formValues);
+        }else {
+            console.log('Form has errors');
+        }
+    }, [errors, isSubmitting]);
 
     const handleInputChange = useCallback((e) => {
         const { name, value, required, dataset } = e.target;
@@ -47,6 +56,7 @@ const CreateTeacherForm=(props)=> {
         }));
         validateField(name, value,dataset.validationType, formValues, setFieldError, clearFieldError,dataset.param);
     }, [formValues, setFieldError, clearFieldError]);
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -62,13 +72,7 @@ const CreateTeacherForm=(props)=> {
                 fieldElement?.param
             );
         });
-
-        if (Object.keys(errors).length === 0) {
-            createUser()
-            console.log('Form submitted successfully', formValues);
-        } else {
-            console.log('Form has errors');
-        }
+        setIsSubmitting(true)
     };
     const togglePassword = (id) => {
         var x = document.getElementById(id);
@@ -119,6 +123,7 @@ const CreateTeacherForm=(props)=> {
                 </div>
 
                 <div className="form_wrap form-wrap ">
+
                     <form onSubmit={handleSubmit} noValidate>
                         <div className="input_area">
                             <FormGroup label="Teacher No" fieldName="teacher_no" required validationType="required">
